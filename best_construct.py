@@ -10,3 +10,11 @@ def best_construct(target_word: str, word_bank: List[str]) -> List[str]:
     Returns:
         List[str]: _A list containing str required to make target word_
     """
+    #Declare a list and initialize it to None
+    best: List[str] = [None for _ in range(len(target_word) + 1)]
+
+    #Set the 0 index to empty list since a str with len 0 can be constructed by str in empty list
+    best[0] = []
+
+    #loop through the length of the target
+    for index in range(len(target_word)):
