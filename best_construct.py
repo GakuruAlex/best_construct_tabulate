@@ -18,3 +18,9 @@ def best_construct(target_word: str, word_bank: List[str]) -> List[str]:
 
     #loop through the length of the target
     for index in range(len(target_word)):
+        #For each index of the target word, loop through the strs in the word bank
+        for word in target_word:
+            #Check if a slice of the target from the current index and ending at the length of the current word is equal to the current word
+            if target_word[index: len(word)] == word:
+                if best[index + len(word)] == None:
+                    best[index + len(word)] == [word]
